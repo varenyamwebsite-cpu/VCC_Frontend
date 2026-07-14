@@ -99,7 +99,7 @@ function RegisterForm() {
         if (!validate()) return;
 
         try {
-            const res = await client.post("/api/auth/register", form);
+            const res = await client.post("/auth/register", form);
             localStorage.setItem('token', `Bearer ${res.data.jwt}`);
             toast.success(res.data.msg);
             navigate('/me');
