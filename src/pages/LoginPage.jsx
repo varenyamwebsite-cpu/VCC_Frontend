@@ -83,7 +83,7 @@ function LoginForm() {
         }
 
         try {
-            const res = await strapi.post("/api/auth/local", { identifier: form.email, password: form.password });
+            const res = await strapi.post("/auth/local", { identifier: form.email, password: form.password });
 
             localStorage.setItem('token', `Bearer ${res.data.jwt}`);
 
